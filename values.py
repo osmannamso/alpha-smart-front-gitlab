@@ -7,7 +7,7 @@ channel_chat_id = '-1001132409362'
 
 def send_message(text: str):
     parsed_text = parse.quote(text)
-    req = request.Request(f'https://api.telegram.org/bot{bot_api}/sendMessage?chat_id={dev_group_chat_id}&text={parsed_text}')
+    req = request.Request(f'https://api.telegram.org/bot{bot_api}/sendMessage?chat_id={channel_chat_id}&text={parsed_text}')
     request.urlopen(req)
 
 
