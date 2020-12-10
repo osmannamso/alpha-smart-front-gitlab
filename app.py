@@ -7,6 +7,7 @@ app = Flask(__name__)
 @app.route('/merge_request', methods=['POST'])
 def merge_request():
     data = request.get_json()
+    print(data)
     text = f"{data['user']['name']} под username {data['user']['username']} сделал реквест на бранч {data['merge_request']['source']['default_branch']}"
     send_message(text)
     return text
