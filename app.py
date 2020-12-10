@@ -8,7 +8,7 @@ app = Flask(__name__)
 def merge_request():
     data = request.get_json()
     print(data)
-    text = f"{data['user']['name']} под username {data['user']['username']} сделал реквест на бранч {data['merge_request']['source']['default_branch']}"
+    text = f"{data['user']['name']} под username {data['user']['username']} сделал реквест на бранч {data['object_attributes']['target_branch']}"
     send_message(text)
     return text
 
