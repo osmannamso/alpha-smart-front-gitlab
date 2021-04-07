@@ -1,19 +1,19 @@
 from urllib import request, parse
 import json
 
-bot_api = '1331155386:AAEKWdb-XdW0-4ykTRgel4byIIAZ1bO6kvI'
+bot_api = '1331155386:AAHY05yymhyjoRWPTepZUwe4r0hdmwTv9Gw'
 dev_group_chat_id = '-351804047'
 channel_chat_id = '-1001132409362'
 osman_chat_id = '300216268'
 
-CURRENT_CHAT_ID = channel_chat_id
+CURRENT_CHAT_ID = osman_chat_id
 
 
 def send_message(text: str):
-    if text != 'Something went wrong, please try again.':
-        parsed_text = parse.quote(text)
-        req = request.Request(f'https://api.telegram.org/bot{bot_api}/sendMessage?chat_id={CURRENT_CHAT_ID}&text={parsed_text}')
-        request.urlopen(req)
+    parsed_text = parse.quote(text)
+    req = request.Request(
+        f'https://api.telegram.org/bot{bot_api}/sendMessage?chat_id={CURRENT_CHAT_ID}&text={parsed_text}')
+    request.urlopen(req)
 
 
 def get_chats():
