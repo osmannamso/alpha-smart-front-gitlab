@@ -35,6 +35,7 @@ def push_event():
 @app.route('/deployment_event', methods=['POST'])
 def deployment_event():
     data = request.get_json()
+    print(data)
     text = f"Деплой({data['commit_title']}) "
     if data['status'] == 'running':
         text += 'начался'
@@ -45,7 +46,6 @@ def deployment_event():
     elif data['status'] == 'canceled':
         text += 'отменен'
     send_message(text)
-    print(data)
 
     return text
 
