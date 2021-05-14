@@ -45,6 +45,7 @@ def deployment_event():
     elif data['status'] == 'canceled':
         text += 'отменен'
     send_message(text)
+    print(data)
 
     return text
 
