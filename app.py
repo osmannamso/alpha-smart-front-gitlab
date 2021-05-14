@@ -12,7 +12,9 @@ def welcome_page():
 @app.route('/merge_request', methods=['POST'])
 def merge_request():
     data = request.get_json()
-    text = f"tracking_front: {data['user']['name']}({data['user']['username']}) сделал реквест на бранч " \
+    print(data)
+    text = f"tracking_front: {data['user']['name']}({data['user']['username']}) сделал реквест с бранча " \
+           f"{data['object_attributes']['source_branch']} на бранч " \
            f"{data['object_attributes']['target_branch']}, Последний коммит: " \
            f"{data['object_attributes']['last_commit']['message']}"
     if data['object_attributes']['state'] == 'opened':
@@ -36,15 +38,11 @@ def push_event():
 def deployment_event():
     data = request.get_json()
     print(data)
-    text = f"Деплой({data['commit_title']}) "
-    if data['status'] == 'running':
-        text += 'начался'
-    elif data['status'] == 'success':
-        text += 'прошел)'
+    text = f"Деплой({data['commit_title']}) на стэнд {data['environment']}"
+    if data['status'] == 'success':
+        text += 'прошел'
     elif data['status'] == 'failed':
-        text += 'упал('
-    elif data['status'] == 'canceled':
-        text += 'отменен'
+        text += 'упал'
     send_message(text)
 
     return text
