@@ -38,12 +38,13 @@ def push_event():
 def deployment_event():
     data = request.get_json()
     print(data)
-    text = f"Деплой({data['commit_title']}) на стэнд {data['environment']}"
+    text = f"Деплой({data['commit_title']}) на стэнд {data['environment']} "
     if data['status'] == 'success':
         text += 'прошел'
+        send_message(text)
     elif data['status'] == 'failed':
         text += 'упал'
-    send_message(text)
+        send_message(text)
 
     return text
 
