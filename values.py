@@ -12,7 +12,7 @@ CURRENT_CHAT_ID = channel_chat_id
 def send_message(text: str):
     parsed_text = parse.quote(text)
     req = request.Request(
-        f'https://api.telegram.org/bot{bot_api}/sendMessage?chat_id={CURRENT_CHAT_ID}&text={parsed_text}')
+        f'https://api.telegram.org/bot{bot_api}/sendMessage?chat_id={CURRENT_CHAT_ID}&text={parsed_text}&parse_mode=markdown')
     request.urlopen(req)
 
 
