@@ -1,7 +1,7 @@
 from urllib import request, parse
 import json
 
-bot_api = '1331155386:AAHY05yymhyjoRWPTepZUwe4r0hdmwTv9Gw'
+bot_api = '1331155386:AAFjRkBdUdK6viRsrZv_GrIJN6Mxhz6e6uA'
 dev_group_chat_id = '-351804047'
 channel_chat_id = '-1001132409362'
 osman_chat_id = '300216268'
