@@ -14,8 +14,8 @@ def merge_request():
     data = request.get_json()
     print(data)
     text = f"tracking_front: {data['user']['name']}({data['user']['username']}) сделал реквест с бранча " \
-           f"**{data['object_attributes']['source_branch']}** на бранч " \
-           f"**{data['object_attributes']['target_branch']}**, Последний коммит: " \
+           f"{data['object_attributes']['source_branch']} на бранч " \
+           f"{data['object_attributes']['target_branch']}, Последний коммит: " \
            f"{data['object_attributes']['last_commit']['message']}"
     if data['object_attributes']['state'] == 'opened':
         send_message(text)
@@ -38,7 +38,7 @@ def push_event():
 def deployment_event():
     data = request.get_json()
     print(data)
-    text = f"Деплой({data['commit_title']}) на стэнд **{data['environment']}** "
+    text = f"Деплой({data['commit_title']}) на стэнд {data['environment']} "
     if data['status'] == 'success':
         text += 'прошел'
         send_message(text)
