@@ -1,29 +1,38 @@
-<style>
-    p {
-        font-size: 20px;
-        border-bottom: 1px solid black;
-        padding: 15px 0;
-    }
-</style>
-<h1>Welcome to telgram bot app (Alpha Smart Front GitLab)</h1>
-<p>
-    The main endpoint is <b>https://alpha-smart-front-gitlab.herokuapp.com/</b>
-</p>
-<p>
-    To get chat updates the route is <a href="/get_updates" target="_blank">/get_updates</a> [GET]
-</p>
-<p>
-    Merge request message, the route is <a href="/merge_request" target="_blank">/merge_request</a> [POST]<br />
-    Example message: <b>tracking_front: Osman(Osman) сделал реквест на бранч develop, Последний коммит: update: Тестовый для хука</b><br />
-    Копируй это: <b>https://alpha-smart-front-gitlab.herokuapp.com/merge_request</b>
-</p>
-<p>
-    Push event message, the route is <a href="/push_event" target="_blank">/push_event</a> [POST]<br />
-    Example message: <b>Osman(Osman) сделал пуш в реп, Количество коммитов: 4</b><br />
-    Копируй это: <b>https://alpha-smart-front-gitlab.herokuapp.com/push_event</b>
-</p>
-<p>
-    Deployment event message, the route is <a href="/deployment_event" target="_blank">/deployment_event</a> [POST]<br />
-    Example message: <b>Деплой прошел</b><br />
-    Копируй это: <b>https://alpha-smart-front-gitlab.herokuapp.com/deployment_event</b>
-</p>
+<html>
+    <head>
+        <meta property="og:site_name" content="SiteName">
+        <meta property="og:title" content="SiteTitle" />
+        <meta property="og:description" content="SiteDescription" />
+    </head>
+    <style>
+        p {
+            font-size: 20px;
+            border-bottom: 1px solid black;
+            padding: 15px 0;
+        }
+    </style>
+    <body>
+        <h1>Welcome to telgram bot app (Alpha Smart Front GitLab)</h1>
+        <p>
+            The main endpoint is <b>https://alpha-smart-front-gitlab.herokuapp.com/</b>
+        </p>
+        <p>
+            To get chat updates the route is <a href="/get_updates" target="_blank">/get_updates</a> [GET]
+        </p>
+        <p>
+            Merge request message, the route is <a href="/merge_request" target="_blank">/merge_request</a> [POST]<br />
+            Example message: <b>tracking_front: Osman(Osman) сделал реквест на бранч develop, Последний коммит: update: Тестовый для хука</b><br />
+            Копируй это: <b>https://alpha-smart-front-gitlab.herokuapp.com/merge_request</b>
+        </p>
+        <p>
+            Push event message, the route is <a href="/push_event" target="_blank">/push_event</a> [POST]<br />
+            Example message: <b>Osman(Osman) сделал пуш в реп, Количество коммитов: 4</b><br />
+            Копируй это: <b>https://alpha-smart-front-gitlab.herokuapp.com/push_event</b>
+        </p>
+        <p>
+            Deployment event message, the route is <a href="/deployment_event" target="_blank">/deployment_event</a> [POST]<br />
+            Example message: <b>Деплой прошел</b><br />
+            Копируй это: <b>https://alpha-smart-front-gitlab.herokuapp.com/deployment_event</b>
+        </p>
+    </body>
+</html>
