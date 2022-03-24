@@ -1,6 +1,6 @@
 from values import send_message, get_chats
 
-from flask import Flask, request, render_template, redirect, url_for
+from flask import Flask, request, render_template, redirect
 app = Flask(__name__)
 
 
@@ -11,7 +11,7 @@ def welcome_page():
 
 @app.route('/redirect', methods=['GET'])
 def redirect_page():
-    return redirect(url_for('foo'))
+    return redirect('https://alpha-smart-front-gitlab.herokuapp.com/foo', code=302)
 
 
 @app.route('/foo', methods=['GET'])
