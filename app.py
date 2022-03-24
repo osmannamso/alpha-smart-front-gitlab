@@ -1,11 +1,21 @@
 from values import send_message, get_chats
 
-from flask import Flask, request, render_template
+from flask import Flask, request, render_template, redirect, url_for
 app = Flask(__name__)
 
 
 @app.route('/', methods=['GET'])
 def welcome_page():
+    return render_template('welcome-page.html')
+
+
+@app.route('/redirect', methods=['GET'])
+def redirect_page():
+    return redirect(url_for('foo'))
+
+
+@app.route('/foo', methods=['GET'])
+def redirect_page():
     return render_template('welcome-page.html')
 
 
