@@ -15,7 +15,7 @@ def redirect_page():
 
 
 @app.route('/foo', methods=['GET'])
-def redirect_page():
+def foo_page():
     return render_template('welcome-page.html')
 
 
